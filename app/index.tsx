@@ -42,8 +42,7 @@ export default function HomeScreen() {
 
   const deleteGuest = (id: string) => {
     // ConfirmAleart(id) // it's not opening in web
-    setGuests(guests.filter(g => g.id !== id));
-    showToast("Guest deleted", "success");
+    DeleteConfirm(id)
     
   };
   const ConfirmAleart = async (id: string) => {
@@ -57,13 +56,15 @@ export default function HomeScreen() {
               },
               {
                   text: "Yes",
-                  onPress: () => {
-                    setGuests(guests.filter(g => g.id !== id));
-                    showToast("Guest deleted", "success");
-                  } 
+                  onPress: () => DeleteConfirm(id)
               }
           ]
       )
+  }
+
+  const DeleteConfirm = (id: string) =>{
+    setGuests(guests.filter(g => g.id !== id));
+    showToast("Guest deleted", "success");
   }
 
 

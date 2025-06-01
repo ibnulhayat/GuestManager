@@ -37,6 +37,7 @@ const GuestForm = ({ onSubmit, initialData, categories}: Props) => {
         value={name} 
         onChangeText={setName} 
         style={styles.input} 
+        autoFocus
       />
       <TextInput 
         placeholder="Email" 
